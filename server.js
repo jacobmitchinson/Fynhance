@@ -12,5 +12,6 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/js', express.static(__dirname + '/public/js'));
 app.use('/css', express.static(__dirname + '/public/css'));
+app.use('/css', express.static(__dirname + '/public/images'));
 
 require('./app/src/sockets/socketHandlers.js')(server);

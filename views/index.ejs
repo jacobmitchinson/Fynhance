@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Meshee Chat</title>
-    <link rel="font" type="text/Ledfont" href="css/Ledfont.ttf">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="bootstrap-theme" type="text/bootstrap" href="css/bootstrap-theme.css">
-    <link rel="bootstrap" type="text/bootstrap" href="css/bootstrap.css">
+    <title>PairTrade</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <meta charset="utf-8">
   </head>
   <body>
 
-    <svg id="meshee-logo" height="120" version="1.1" width="120" xmlns="http://www.w3.org/2000/svg"></svg>
+    <nav class="navbar navbar-default fixed-navbar">
+      <img id="logo" src="images/logo.png">
+    </nav>
+
+    <section class="col-md-3">
+    </section>
+    <section class="col-md-6 newsfeed-box">
+      <h3 class="share-title">Google Inc (GOOG)</h3>
+      <h6 class="share-market">NASDAQ</h3>
+      <h6 class="share-amount">20 shares @ $523 / $10,460</h6>
+      <img class="share-person" src="images/james-may.png">
+      <section class="col-md-12 bottom-share-menu">
+        <section class="col-md-4">
+          <img class="share-icons" src="images/comment-01.png">
+        </section>
+        <section class="col-md-4">
+          <img class="share-icons" src="images/accept-01.png">
+        </section>
+        <section class="col-md-4">
+          <img class="share-icons" src="images/deny-01.png">
+        </section>
+      </section>
+    </section>
+    <section class="col-md-3">
+    </section>
 
     <section class="grid">
       <section class="user-column">
-        <img src="Images/MeshUsersBlack.png" id="mesh-users" alt="Mesh Users" style="width: 190px;height: 117px;">
           <div class="users-span">
             <li id="users" class="unstyled" style="list-style-type: none;"></li>
           </div>
@@ -45,8 +67,10 @@
     <script src="js/socket.io-1.2.0.js"></script>
     <script src="js/jquery-1.11.1.js"></script>
     <script src="js/socketHandlers.js"></script>
-    <script src="js/snap.svg.js"></script>
-    <script src="js/logo.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="javascript/interface.js"></script>
 
   </body>
 </html>
