@@ -1,32 +1,60 @@
 {
-  "name": "angular-seed",
-  "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
-  "license": "MIT",
+  "name": "meshee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "ejs": "^2.1.0",
+    "express": "^4.10.2",
+    "innkeeper-socket.io": "^1.4.0",
+    "mocha-casperjs": "^0.5.3",
+    "mongodb": "^1.4.32",
+    "monk": "^1.0.0",
+    "nodemon": "^1.3.7",
+    "path": "^0.11.14",
+    "socket.io": "^1.3.4",
+    "socket.io-client": "^1.3.4"
+  },
   "devDependencies": {
-    "karma": "~0.10",
-    "protractor": "^1.1.1",
-    "http-server": "^0.6.1",
-    "bower": "^1.3.1",
-    "shelljs": "^0.2.6",
-    "karma-junit-reporter": "^0.2.2"
+    "casper": "^0.1.1",
+    "casper-chai": "^0.2.1",
+    "casperjs": "^1.1.0-beta3",
+    "chai": "^2.1.0",
+    "chai-webdriver": "^1.1.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-express": "^1.4.1",
+    "grunt-express-server": "^0.4.19",
+    "grunt-mocha-casperjs": "^1.4.1",
+    "grunt-mocha-chai-sinon": "0.0.8",
+    "grunt-mocha-cli": "^1.12.0",
+    "grunt-mocha-istanbul": "^2.3.1",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-run": "^0.3.0",
+    "istanbul": "^0.3.6",
+    "mocha": "^2.1.0",
+    "mocha-casperjs": "^0.5.3",
+    "phantomjs": "^1.9.15",
+    "selenium-standalone": "^4.2.0",
+    "selenium-webdriver": "^2.45.1",
+    "should": "^5.0.1",
+    "socket.io-client": "^1.3.4",
+    "webdriverio": "^2.4.5"
   },
   "scripts": {
-    "postinstall": "bower install",
-    "prestart": "npm install",
-    "start": "http-server -a localhost -p 8000 -c-1",
-    "pretest": "npm install",
-    "test": "karma start test/karma.conf.js",
-    "test-single-run": "karma start test/karma.conf.js  --single-run",
-    "preupdate-webdriver": "npm install",
-    "update-webdriver": "webdriver-manager update",
-    "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor test/protractor.conf.js",
-    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "dependencies": {
-    "fingular": "^0.2.7"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kierangoodacre/mesheeChat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kierangoodacre/mesheeChat/issues"
+  },
+  "homepage": "https://github.com/kierangoodacre/mesheeChat"
 }
