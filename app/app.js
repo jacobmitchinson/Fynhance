@@ -10,17 +10,31 @@ angular.module('myApp', [
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
 }])
+.service('fbService', ['$rootScope', function($rootScope) {
 
-.controller('Controller1', function($scope) {
+  var onTradersUpdateCb = null;
+  var onTradesUpdateCb = null;
+  var onPairsUpdateCb = null;
 
-  fbService.listenToPairs(function() {
-    console.log('hello, new pair created');
-  })
+  this.listenToTraders = function(cb) {
+    onTradersUpdateCb = cb;
+  };
+  this.listenToTrades = function(cb) {
+    onTradesUpdateCb = cb;
+  };
+  this.listenToPairs = function(cb) {
+    onPairsUpdateCb = cb;
+  };
 
-  $scope.onPairClick = function() {
-    console.log('hello 1');
-    fbService.addPair('id1', 'id2', function(response) {
-      console.log('hello 2');
+  this.addPair = function(id1, id2, cb) {
+    onPairsUpdateCb({
+      success: true
     });
   };
-});
+
+  this.addTrade = function(traderId, tradeKey, tradeValue, cb) {
+    onPairsUpdateCb({
+      success: true
+    });
+  };
+}]);
