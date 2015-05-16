@@ -47,9 +47,35 @@ $(document).ready(function(){
 
   socket.on("chat", function(who, msg){
     if(ready) {
-      console.log(msg);
+      var ticket = JSON.parse(msg);
+      var company = ticket.company;
+      var market = ticket.market;
+      var shareAmount = ticket.shareAmount;
+      var price = ticket.price;
+      console.log(company, market, shareAmount, price);
       if (msg != null) {
-        $("#msgs").append("<li style='display:none' id='message" + counter + '\'' + "><strong><span class='text-success'>" + who + "</span></strong>: " + msg + "</li>");
+        $("#msgs").append("<li>" + 
+
+
+          "<section class='col-md-6 newsfeed-box'>" + 
+            "<h3 class='share-title'>" + company + "</h3>" + 
+            "<h6 class='share-market'>" + market +  "</h3>" + 
+            "<h6 class='share-amount'>" + shareAmount + "@" + price + "</h6>" +
+            "<img class='share-person' src='images/james-may.png'>" + 
+            "<section class='col-md-12 bottom-share-menu'>" +
+              "<section class='col-md-4'>" + 
+                "<img class='share-icons' src='images/comment-01.png'>" +
+              "</section>" +
+              "<section class='col-md-4'>" +
+                "<img class='share-icons' src='images/accept-01.png'>" +
+              "</section>" + 
+              "<section class='col-md-4'>" +
+                "<img class='share-icons' src='images/deny-01.png'>" + 
+              "</section>" + 
+            "</section>" +
+          "</section>" + 
+
+          "</li>");
         $('#message' + counter).fadeIn();
         counter += 1;
       }
