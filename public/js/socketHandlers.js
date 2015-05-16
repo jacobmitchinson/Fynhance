@@ -3,14 +3,6 @@ var counter = 0;
 
 $(document).ready(function(){
   var socket = io();
-  // $("#chat").hide();
-  // $(".user-column").hide();
-
-  // var s = Snap("#meshee-logo");
-  // var logoObject = new LogoObject(s, 0.3);
-
-  // $("#meshee-logo").hide();
-
   var names = ["David", "Tom"]
   socket.emit("join", names.pop());
 
@@ -21,31 +13,10 @@ $(document).ready(function(){
     event.preventDefault();
   });
 
-  $("#join").click(function(){
-    if (name !== "") {
-      socket.emit("join", names.pop());
-      $("#login").detach();
-      $("#meshee-logo").fadeIn(1000);
-      $("#chat").fadeIn(1000);
-      $(".user-column").fadeIn(1000);
-      // $("#nodes-tile").text(userTitle);
-      $("#mesh-users").fadeIn(1200);
-      $("#msg").focus();
-    }
-  });
-
   $("#send").click(function(){
     var msg = $("#msg").val();
     socket.emit("message", msg);
     $("#msg").val("");
-  });
-
-  $("#msg").keypress(function(event){
-    if(event.which == 13) {
-      var msg = $("#msg").val();
-      socket.emit("message", msg);
-      $("#msg").val("");
-    }
   });
 
   socket.on("update", function(user){
@@ -76,6 +47,7 @@ $(document).ready(function(){
 
   socket.on("chat", function(who, msg){
     if(ready) {
+      console.log(msg);
       if (msg != null) {
         $("#msgs").append("<li style='display:none' id='message" + counter + '\'' + "><strong><span class='text-success'>" + who + "</span></strong>: " + msg + "</li>");
         $('#message' + counter).fadeIn();
