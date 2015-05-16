@@ -20,9 +20,9 @@ body{
 .people-column{
   background-color: #88AD3E;
 }
-
-
-
+li{
+  text-align: center;
+}
 .right-col{
   background-color: #fff;
   position: fixed;
@@ -30,12 +30,8 @@ body{
   margin-left: 241px;
   display: inline;
   text-align: center;
-  /*float: right;*/
-  /*display: inline-block;*/
-
   height: 100%;
   width: 100%;
-  /*min-width: 591px;*/
 }
 
 .synopsis {
@@ -54,7 +50,13 @@ body{
   padding: 1em;
   list-style: none;
   font-size: 1.2em;
-  color: #fff;
+  color: #000;
+}
+.pair-box{
+  width: 600px;
+  height: 300px;
+  border-style: dashed;
+  margin-left: 19%; 
 }
 
 .people-image {
