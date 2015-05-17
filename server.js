@@ -3,15 +3,13 @@ var server = require('http').createServer(app).listen(3001, '::');
 var path = require('path');
 var express = require('express');
 
-require('./app/controllers/index.js')(app);
-// require('./app/controllers/database.js')(app);
-// require('./app/controllers/contacts.js')(app);
-// require('./app/controllers/contacts/newContact.js')(app);
+require('./zerver/controllers/index.js')(app);
+require('./zerver/libs/socket-handlers')(server);
 
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/js', express.static(__dirname + '/public/js'));
-app.use('/css', express.static(__dirname + '/public/css'));
-app.use('/css', express.static(__dirname + '/public/images'));
+//app.use(express.static(path.join(__dirname, 'www')));
 
-require('./app/src/sockets/socketHandlers.js')(server);
+app.use('/img', express.static(__dirname + '/www/img'));
+app.use('/js', express.static(__dirname + '/www/js'));
+app.use('/css', express.static(__dirname + '/www/css'));
+
