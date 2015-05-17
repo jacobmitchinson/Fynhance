@@ -1,6 +1,6 @@
-var userTitle = "MESH USERS";
+var userTitle = "PAIRTRADE";
 var counter = 0;
- 
+
 $(document).ready(function(){
   var socket = io();
   var clientName = $('#client-name').html();
@@ -56,9 +56,9 @@ $(document).ready(function(){
     }
   })
 
-  socket.on("comment", function(who, comment, ticketID) { 
-    if(ready) { 
-      if(comment != null) { 
+  socket.on("comment", function(who, comment, ticketID) {
+    if(ready) {
+      if(comment != null) {
         $("#ticket" + ticketID).append("<li>" + comment + "</li>");
       }
     }
@@ -91,7 +91,7 @@ $(document).ready(function(){
           "<form id='3' class='form-inline'>" +
             "<input type='text' class='input' placeholder='Comment' id='new-comment'>" +
             "<input type='hidden' value='ticket" + counter + "\'" +  "id='comment-ticket'" + ">" +
-            "<button type='button' name='send' id='send-comment' value='" + counter + "\'" + "class='btn btn-success'>Comment</button>" + 
+            "<button type='button' name='send' id='send-comment' value='" + counter + "\'" + "class='btn btn-success'>Comment</button>" +
           "</form>" +
 
           "</li>");
