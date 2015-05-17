@@ -1,11 +1,14 @@
+// load dependencies
 var io                = require('socket.io');
-var socketJoin        = require('./socketJoin');
-var socketMessage     = require('./socketMessage');
-var socketDisconnect  = require('./socketDisconnect');
-var socketUserList    = require('./socketUserList');
+var socketJoin        = require('./_join');
+var socketMessage     = require('./_message');
+var socketDisconnect  = require('./_disconnect');
+var socketUserList    = require('./_userList');
+
+// private variables
 var people            = {};
 
-var Sockets = function(server) {
+module.exports = function(server) {
   socket = io(server);
   socket.on("connection", function (client) {
 
@@ -16,5 +19,3 @@ var Sockets = function(server) {
 
   });
 };
-
-module.exports = Sockets;
