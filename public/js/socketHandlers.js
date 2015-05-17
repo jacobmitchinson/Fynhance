@@ -22,10 +22,11 @@ $(document).ready(function(){
     $("#msg").val("");
   });
 
-  $("#send-comment").click(function(event){
+  $("body").on('click', '#send-comment', function(event){
     event.preventDefault();
     var comment = $("#new-comment").val();
-    var ticketID = $('#comment-ticket').val();
+    var ticketID = this.value;
+    console.log(ticketID);
     socket.emit("comment", comment, ticketID);
     $("#msg").val("");
   });
@@ -59,7 +60,7 @@ $(document).ready(function(){
   socket.on("comment", function(who, comment, ticketID) { 
     if(ready) { 
       if(comment != null) { 
-        $("#comments").append("<li>" + comment + "</li>");
+        $("#ticket" + ticketID).append("<li>" + comment + "</li>");
       }
     }
   });
@@ -90,8 +91,8 @@ $(document).ready(function(){
 
           "<form id='3' class='form-inline'>" +
             "<input type='text' class='input' placeholder='Comment' id='new-comment'>" +
-            "<input type='hidden' value=" + "ticket" + counter + "id='comment-ticket'" + ">" +
-            "<button type='button' name='send' id='send-comment' value='Send' class='btn btn-success'>Comment</button>" + 
+            "<input type='hidden' value='ticket" + counter + "\'" +  "id='comment-ticket'" + ">" +
+            "<button type='button' name='send' id='send-comment' value='" + counter + "\'" + "class='btn btn-success'>Comment</button>" + 
           "</form>" +
 
           "</li>");
