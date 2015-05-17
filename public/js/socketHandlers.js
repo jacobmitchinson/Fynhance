@@ -39,27 +39,27 @@ $(document).ready(function(){
 
   socket.on("update", function(msg) {
     if(ready) {
-      $("#msgs").append("<li>" + msg + "</li>");
+      // $("#msgs").append("<li>" + msg + "</li>");
     }
   });
 
   socket.on("update-disconnect", function(user) {
     socket.emit("user-list", name);
     if(ready === true) {
-      $("#users").html("<li>" + name + "</li>");
+      // $("#users").html("<li>" + name + "</li>");
     }
   });
 
   socket.on("update-disconnect", function(user) {
     if(ready === true) {
-      $("#msgs").append("<li>" + user + "</li>");
+      // $("#msgs").append("<li>" + user + "</li>");
     }
   })
 
   socket.on("comment", function(who, comment, ticketID) {
     if(ready) {
       if(comment != null) {
-        $("#ticket" + ticketID).append("<li>" + comment + "</li>");
+        $("#ticket" + ticketID).append("Comments: <li>" + comment + "</li>");
       }
     }
   });
