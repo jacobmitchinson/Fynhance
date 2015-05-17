@@ -1,7 +1,6 @@
 module.exports = function(stores, client) {
 
   client.on('trader-make-trade', function(traderId, company, market, amount, price, contextData) {
-    //TODO
     // 1. check if trader is paired
     var traders = stores.traders;
     var trader = traders[traderId];
@@ -17,17 +16,19 @@ module.exports = function(stores, client) {
       amount: amount,
       price: price,
       data: contextData,
-      status: 'new',
-      timeWindow: 300  // 5 minutes
+      status: 'new'
     };
     trades[newTradeId] = newTrade;
 
     // 2. set to approve by default after timer
     if (trader.paired) {
-      setTimeout(function() {
+      var timeWindow = 300;  // 5 minutes
+
+      newTrade.timeWindowTimer = setTimeout(function() {
         newTrade.status = 'defaut';
         client.broadcast.emit('update-trades', trades);  // update again if changed by default
-      }, newTrade.timeWindow * 1000);
+      }, timeWindow * 1000);
+      newTrade.timeWindow = timeWindow;
     } else {
       newTrade.status = 'complete';
     }
