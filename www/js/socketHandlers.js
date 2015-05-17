@@ -1,4 +1,4 @@
-var userTitle = "MESH USERS";
+var userTitle = "PairTrade";
 var counter = 0;
 
 $(document).ready(function(){
@@ -58,16 +58,16 @@ $(document).ready(function(){
             "<h3 class='share-title'>" + company + "</h3>" +
             "<h6 class='share-market'>" + market +  "</h3>" +
             "<h6 class='share-amount'>" + shareAmount + "@" + price + "</h6>" +
-            "<img class='share-person' src='images/james-may.png'>" +
+            "<img class='share-person' src='img/james-may.png'>" +
             "<section class='col-md-12 bottom-share-menu'>" +
               "<section class='col-md-4'>" +
-                "<img class='share-icons' src='images/comment-01.png'>" +
+                "<img class='share-icons' src='img/comment-01.png'>" +
               "</section>" +
               "<section class='col-md-4'>" +
-                "<img class='share-icons' src='images/accept-01.png'>" +
+                "<img class='share-icons' src='img/accept-01.png'>" +
               "</section>" +
               "<section class='col-md-4'>" +
-                "<img class='share-icons' src='images/deny-01.png'>" +
+                "<img class='share-icons' src='img/deny-01.png'>" +
               "</section>" +
             "</section>" +
           "</section>" +
