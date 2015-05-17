@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script src="//use.typekit.net/cct5ldi.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
     <meta charset="utf-8">
   </head>
   <body>
@@ -13,10 +17,7 @@
       <img id="logo" src="images/logo.png">
     </nav>
 
-    <section class="col-md-3">
-    </section>
-    <section class="col-md-3">
-    </section>
+
 
     <section class="grid">
       <section class="user-column">
@@ -26,28 +27,28 @@
         </div>
       </section>
 
-      <section class="messages-column">
-        <div class="row">
-          <div class="span4">
-            <li id="msgs" class="unstyled" style="list-style-type: none;"></li>
-          </div>
-        </div>
+
+      <section class="col-md-2">
+      </section>
+        <section class="col-md-8">
+          <form id="2" class="form-inline">
+            <input type="text" class="input company-input" placeholder="Company" id="company">
+            <input type="text" class="input" placeholder="Market" id="market">
+            <input type="text" class="input" placeholder="Share Amount" id="share-amount">
+            <input type="text" class="input" placeholder="Price" id=price>
+            <button name="send" id="send" value="Send" class="btn btn-success">Send</button>
+          </form>
+        </section>
+      <section class="col-md-2">
       </section>
 
-      <section id="chat-column">
-        <div class="form-inputs" id="form-inputs">
-          <div class="span5 offset2" id="chat">
-            <form id="2" class="form-inline">
-              <input type="text" class="input" placeholder="Company" id="company">
-              <input type="text" class="input" placeholder="Market" id="market">
-              <input type="text" class="input" placeholder="Share Amount" id="share-amount">
-              <input type="text" class="input" placeholder="Price" id=price>
-              <button name="send" id="send" value="Send" class="btn btn-success">Send</button>
-            </form>
-          </div>
+
+      <section class="messages-column">
+        <div class=" col-md-12">
+            <li id="msgs" class style="list-style-type: none;">
+            </li>
         </div>
       </section>
-    </section>
 
     <script src="js/socket.io-1.2.0.js"></script>
     <script src="js/jquery-1.11.1.js"></script>

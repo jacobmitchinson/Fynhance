@@ -51,10 +51,10 @@ $(document).ready(function(){
   socket.on("chat", function(who, company, market, shareAmount, price){
     if(ready) {
       if (company != null) {
-        $("#msgs").append("<li>" +
+        $("#msgs").append(
 
-
-          "<section class='col-md-6 newsfeed-box'>" +
+        "<li>"  +
+          "<section class='col-md-12 newsfeed-box'>" +
             "<h3 class='share-title'>" + company + "</h3>" +
             "<h6 class='share-market'>" + market +  "</h3>" +
             "<h6 class='share-amount'>" + shareAmount + "@" + price + "</h6>" +
@@ -70,9 +70,7 @@ $(document).ready(function(){
                 "<img class='share-icons' src='images/deny-01.png'>" +
               "</section>" +
             "</section>" +
-          "</section>" +
-
-          "</li>");
+          "</section>" + "</li>" + "<br>");
         $('#message' + counter).fadeIn();
         counter += 1;
       }
