@@ -1,11 +1,10 @@
 var userTitle = "MESH USERS";
 var counter = 0;
-
+ 
 $(document).ready(function(){
   var socket = io();
-  var names = ["David", "Tom"]
-  socket.emit("join", names.pop());
-
+  var clientName = $('#client-name').html();
+  socket.emit("join", clientName);
   var ready = true;
 
   $("#name").focus().fadeIn(1000);
