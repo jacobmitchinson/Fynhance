@@ -1,5 +1,7 @@
 body{
-  font-family: helvetica;
+  font-family: "proxima-nova-soft",sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .navbar-default {
@@ -86,6 +88,8 @@ li{
 .share-title {
   text-align: center;
   color: white;
+  font-size: 48px;
+
 }
 
 .share-market {
@@ -101,6 +105,19 @@ li{
   height: 50px;
   display: block;
   margin: auto;
+}
+
+#users {
+  font-size: 48px;
+  text-align: center;
+  margin: 0;
+}
+
+#msgs {
+  text-align: center;
+  font-size: 12px;
+  color: #647F2E;
+  margin: 1rem 0 0 0;
 }
 
 .bottom-share-menu {
@@ -119,6 +136,7 @@ li{
   margin: 0;
 }
 
+<<<<<<< HEAD
 .pair-box div{
   width: 25%;
   height: 50%;
@@ -144,5 +162,22 @@ li{
 }
 
 .button-holder{
+}
 
+.input {
+  height: 32px;
+  width: 50%;
+  display: block;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  text-align: center;
+  border: 1px solid #D3D3D3;
+  border-bottom: none;
+}
+
+.company-input {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #D3D3D3;
+  border-bottom: none;
 }

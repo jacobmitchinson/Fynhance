@@ -67,10 +67,9 @@ $(document).ready(function(){
   socket.on("chat", function(who, company, market, shareAmount, price){
     if(ready) {
       if (company != null) {
-        $("#msgs").append("<li id='ticket" + counter + "\'>" +
-
-
-          "<section class='col-md-6' id='newsfeed-box'>" +
+        $("#msgs").append(
+        "<li id='ticket" + counter + "\'>" +
+          "<section class='col-md-12' id='newsfeed-box'>" +
             "<h3 class='share-title'>" + company + "</h3>" +
             "<h6 class='share-market'>" + market +  "</h3>" +
             "<h6 class='share-amount'>" + shareAmount + "@" + price + "</h6>" +
@@ -86,7 +85,6 @@ $(document).ready(function(){
                 "<img class='share-icons' src='images/deny-01.png'>" +
               "</section>" +
             "</section>" +
-          "</section>" +
 
           "<form id='3' class='form-inline'>" +
             "<input type='text' class='input' placeholder='Comment' id='new-comment'>" +
@@ -96,6 +94,7 @@ $(document).ready(function(){
 
           "</li>");
         $('#ticket' + counter).fadeIn();
+          "</section>" + "</li>" + "<br>";
         counter += 1;
       }
     }
