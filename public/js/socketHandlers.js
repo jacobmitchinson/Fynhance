@@ -22,6 +22,14 @@ $(document).ready(function(){
     $("#msg").val("");
   });
 
+  $("#send-comment").click(function(event){
+    event.preventDefault();
+    var comment = $("#new-comment").val();
+    var ticketID = $('#comment-ticket').val();
+    socket.emit("comment", comment, ticketID);
+    $("#msg").val("");
+  });
+
   socket.on("update", function(user){
     socket.emit("user-list", name);
     if(ready === true) {
@@ -48,13 +56,21 @@ $(document).ready(function(){
     }
   })
 
+  socket.on("comment", function(who, comment, ticketID) { 
+    if(ready) { 
+      if(comment != null) { 
+        $("#comments").append("<li>" + comment + "</li>");
+      }
+    }
+  });
+
   socket.on("chat", function(who, company, market, shareAmount, price){
     if(ready) {
       if (company != null) {
-        $("#msgs").append("<li>" +
+        $("#msgs").append("<li id='ticket" + counter + "\'>" +
 
 
-          "<section class='col-md-6 newsfeed-box'>" +
+          "<section class='col-md-6' id='newsfeed-box'>" +
             "<h3 class='share-title'>" + company + "</h3>" +
             "<h6 class='share-market'>" + market +  "</h3>" +
             "<h6 class='share-amount'>" + shareAmount + "@" + price + "</h6>" +
@@ -72,8 +88,14 @@ $(document).ready(function(){
             "</section>" +
           "</section>" +
 
+          "<form id='3' class='form-inline'>" +
+            "<input type='text' class='input' placeholder='Comment' id='new-comment'>" +
+            "<input type='hidden' value=" + "ticket" + counter + "id='comment-ticket'" + ">" +
+            "<button type='button' name='send' id='send-comment' value='Send' class='btn btn-success'>Comment</button>" + 
+          "</form>" +
+
           "</li>");
-        $('#message' + counter).fadeIn();
+        $('#ticket' + counter).fadeIn();
         counter += 1;
       }
     }
