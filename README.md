@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ### Introduction
 
 All around the world internet freedoms are being eroded by governments, restricting communications. For example, [in Venezuala in 2014 the internet was turned off and modes of communcation were blocked](http://www.huffingtonpost.com/2014/02/21/venezuela-internet-_n_4832505.html). We wanted to create a secure, decentralised communications network that would enable secure conversations to take place without the internet. 
@@ -336,4 +335,3 @@ For more information on AngularJS please check out http://angularjs.org/
 [karma]: http://karma-runner.github.io
 [travis]: https://travis-ci.org/
 [http-server]: https://github.com/nodeapps/http-server
->>>>>>> 5eb362f6ecd96d311ba5b4db0848b7cdc10ea193
