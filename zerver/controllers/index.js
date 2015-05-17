@@ -4,4 +4,11 @@ module.exports = function(app) {
     res.render('index');
   });
 
+  app.get('/manager', function(req, res) {
+    res.render('manager');
+  });
+
+  app.get('trader', function(req, res) {
+    res.render('trader');
+  });
 };

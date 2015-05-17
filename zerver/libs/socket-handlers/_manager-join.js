@@ -37,8 +37,8 @@ var defaultTraders = {
 };
 
 var defaultPairs = {};
-defaultPairs[t1 + '-' + t3] = { t1: true, t3: true };
-defaultPairs[t2 + '-' + t4] = { t2: true, t4: true },
+defaultPairs['t1-t3'] = { t1: true, t3: true };
+defaultPairs['t2-t4'] = { t2: true, t4: true };
 
 var defaultTrades = {
 

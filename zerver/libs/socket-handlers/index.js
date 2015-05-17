@@ -10,9 +10,7 @@ var socketManagerJoin = require('./_manager-join');
 var socketManagerMakePair = require('./_manager-make-pair');
 var socketTraderJoin  = require('./_trader-join');
 var socketTraderMakeTrade = require('./_trader-make-trade');
-var socketTraderTradeApprove    = require('./_trader-trade-approve');
-var socketTraderTradeDisapprove = require('./_trader-trade-disapprove');
-var socketTraderTradeExtend     = require('./_trader-trade-extend');
+var socketTraderTradeResponse = require('./_trader-trade-response');
 
 // private variables
 var stores = {
@@ -34,8 +32,6 @@ module.exports = function(server) {
     socketManagerMakePair(stores, client);
     socketTraderJoin(stores, client);
     socketTraderMakeTrade(stores, client);
-    socketTraderTradeApprove(stores, client);
-    socketTraderTradeDisapprove(stores, client);
-    socketTraderTradeExtend(stores, client);
+    socketTraderTradeResponse(stores, client);
   });
 };
