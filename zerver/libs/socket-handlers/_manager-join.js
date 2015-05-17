@@ -53,7 +53,7 @@ module.exports = function(stores, client) {
     stores.trades = defaultTrades;
 
     // 2. return data structure to manager
-    client.broadcast.emit('update-store', stores);
+    client.emit('update-stores', stores);
   });
 
 };

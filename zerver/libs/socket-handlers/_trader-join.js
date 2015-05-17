@@ -1,8 +1,8 @@
-module.exports = function(people, client) {
+module.exports = function(stores, client) {
 
-  client.on('trader-join', function(user) {
-    //TODO
-    // do nothing
+  client.on('trader-join', function() {
+    // get data
+    client.emit('update-stores', stores);
   });
 
 };

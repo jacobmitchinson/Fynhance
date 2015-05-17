@@ -1,7 +1,6 @@
 module.exports = function(stores, client) {
 
   client.on('manager-make-pair', function(trader1Id, trader2Id) {
-    //TODO
     // 1. update pairing data
     // 1.a remove old pairings
     var traders = stores.traders;
