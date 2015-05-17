@@ -10,4 +10,3 @@ app.set('view engine', 'ejs');
 app.use('/img', express.static(__dirname + '/www/img'));
 app.use('/js', express.static(__dirname + '/www/js'));
 app.use('/css', express.static(__dirname + '/www/css'));
-
