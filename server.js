@@ -4,6 +4,7 @@ var path = require('path');
 var express = require('express');
 
 require('./app/controllers/index.js')(app);
+require('./app/controllers/manager.js')(app);
 // require('./app/controllers/database.js')(app);
 // require('./app/controllers/contacts.js')(app);
 // require('./app/controllers/contacts/newContact.js')(app);
