@@ -75,13 +75,13 @@ $(document).ready(function(){
             "<h6 class='share-amount'>" + shareAmount + "@" + price + "</h6>" +
             "<img class='share-person' src='images/james-may.png'>" +
             "<section class='col-md-12 bottom-share-menu'>" +
-              "<section class='col-md-4'>" +
+              "<section class='col-xs-4'>" +
                 "<img class='share-icons' src='images/comment-01.png'>" +
               "</section>" +
-              "<section class='col-md-4'>" +
+              "<section class='col-xs-4'>" +
                 "<img class='share-icons' src='images/accept-01.png'>" +
               "</section>" +
-              "<section class='col-md-4'>" +
+              "<section class='col-xs-4'>" +
                 "<img class='share-icons' src='images/deny-01.png'>" +
               "</section>" +
             "</section>" +
