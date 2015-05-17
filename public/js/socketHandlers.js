@@ -3,9 +3,8 @@ var counter = 0;
 
 $(document).ready(function(){
   var socket = io();
-  var names = ["David", "Tom"]
-  socket.emit("join", names.pop());
-
+  var clientName = $('#client-name').html();
+  socket.emit("join", clientName);
   var ready = true;
 
   $("#name").focus().fadeIn(1000);
@@ -19,6 +18,15 @@ $(document).ready(function(){
     var shareAmount = $("#share-amount").val();
     var price = $("#price").val();
     socket.emit("message", company, market, shareAmount, price);
+    $("#msg").val("");
+  });
+
+  $("body").on('click', '#send-comment', function(event){
+    event.preventDefault();
+    var comment = $("#new-comment").val();
+    var ticketID = this.value;
+    console.log(ticketID);
+    socket.emit("comment", comment, ticketID);
     $("#msg").val("");
   });
 
@@ -48,11 +56,18 @@ $(document).ready(function(){
     }
   })
 
+  socket.on("comment", function(who, comment, ticketID) {
+    if(ready) {
+      if(comment != null) {
+        $("#ticket" + ticketID).append("<li>" + comment + "</li>");
+      }
+    }
+  });
+
   socket.on("chat", function(who, company, market, shareAmount, price){
     if(ready) {
       if (company != null) {
         $("#msgs").append(
-
         "<li>"  +
           "<section class='col-md-12 newsfeed-box'>" +
             "<h3 class='share-title'>" + company + "</h3>" +
