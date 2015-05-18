@@ -6,7 +6,7 @@ An app built at a hackathon that applies the concept of pair programming to trad
 Winner of Best UX Prize
 
 ### Screenshot
-![PairTrade](https://raw.github.com/jacobmitchinson/fynhance/master/public/images/pair_window_screenshot.png)
+![PairTrade](https://raw.githubusercontent.com/jacobmitchinson/Fynhance/master/public/Images/pair_window_screenshot.png)
 
 ## Hackathon Brief
 Develop a digital idea to disrupt and transform the financial services industry for clients and staff.
