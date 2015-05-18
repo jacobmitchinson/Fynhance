@@ -1,7 +1,7 @@
 module.exports = function(stores, client) {
 
   client.on('manager-make-pair', function(trader1Id, trader2Id) {
-    //TODO
+console.log('hello 1');
     // 1. update pairing data
     // 1.a remove old pairings
     var traders = stores.traders;
@@ -32,10 +32,13 @@ module.exports = function(stores, client) {
     //  1.b make new pairing
     trader1.pair = trader2Id;
     trader2.pair = trader1Id;
-    pairs[trader1Id + '-' + trader2Id] = { trader1Id: true, trader2Id: true };
+    var newPair = {};
+    newPair[trader1Id] = true;
+    newPair[trader2Id] = true;
+    pairs[trader1Id + '-' + trader2Id] = newPair;
 
     // 2. broadcast pairing data.
-    client.broadcast.emit('update-pairs', pairs);
+    socket.sockets.emit('update-pairs', pairs);
   });
 
 };

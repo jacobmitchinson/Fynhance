@@ -23,6 +23,28 @@ body{
   background-color: #88AD3E;
 }
 
+.btn-pair-up {
+  float: right;
+}
+.trader-container {
+  margin-bottom: 1px;
+  padding: 10px;
+  cursor: pointer;
+}
+.trader-container.selected {
+  background: #ffdddd;
+}
+.pair-container {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+  .pair-link {
+    margin: 10px 0;
+    text-align: center;
+  }
+
 .right-col{
   background-color: #fff;
   position: fixed;
